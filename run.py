@@ -3,6 +3,7 @@
 #script to upload description and image to server
 import os
 import requests
+import re
 
 #get env variable of user 
 user = os.getenv("USER")
@@ -17,7 +18,9 @@ for file in textDir:
 	with open(path+file, "r") as openedFile:
 		lines = openedFile.readlines()
 		data["name"] = lines[0].strip("\n ")
-
-print(data)
+		# get weight with regex
+		data["weight"] = re.search("[0-9]*", lines[1].strip("\n "))[0]
+		data["description"] = lines[2].strip("\n ")
+		print(data)
 
 
