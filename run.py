@@ -16,10 +16,12 @@ data = {}
 #process the files to create the data dir
 for file in textDir:
 	with open(path+file, "r") as openedFile:
+		#read all file lines
 		lines = openedFile.readlines()
+		#remove '\n' char
 		data["name"] = lines[0].strip("\n ")
-		# get weight with regex
-		data["weight"] = re.search("[0-9]*", lines[1].strip("\n "))[0]
+		# get weight with regex & convert it to int
+		data["weight"] = int(re.search("[0-9]*", lines[1].strip("\n "))[0])
 		data["description"] = lines[2].strip("\n ")
 		print(data)
 
