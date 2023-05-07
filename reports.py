@@ -9,7 +9,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 #function to generate the pdf file
 #we call it from another file 
 
-def generate_report(paragraph, title, file_path):
+def generate_report(title, paragraph, file_path):
     # filename of pdf file
     report = SimpleDocTemplate(file_path)
     styles = getSampleStyleSheet()
@@ -20,7 +20,7 @@ def generate_report(paragraph, title, file_path):
     # simple trick to have an empty line inside the pdf file
     empty_line = Spacer(1, 20)
     # create the pdf report file
-    report.buil([report_title, empty_line,report_body, empty_line])
+    report.build([report_title, empty_line,report_body, empty_line])
 
 
 
