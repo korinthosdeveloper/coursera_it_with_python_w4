@@ -5,6 +5,9 @@ import os
 import requests
 import re
 
+
+#url to upload fruit descriptions
+url = "http://[linux-insta-ip]/fruits"
 #get env variable of user 
 user = os.getenv("USER")
 #find path of files
@@ -27,5 +30,7 @@ for file in textDir:
 		data["description"] = lines[2].strip("\n ")
 		data["image_name"] = name+".jpg"
 		print(data)
+		#we want to upload json object to django server
+		#r = requests.post(url, {json: data})
 
 
