@@ -20,7 +20,7 @@ paragraph = ""
 for file in textDir:
     with open(path+file, "r") as openedFile:
         lines = openedFile.readlines()
-        paragraph += lines[0].strip("\n ") + "<br/>" + lines[1].strip("\n ") + "<br/>" 
+        paragraph += "name: " + lines[0].strip("\n ") + "<br/>"  + "weight: " +  lines[1].strip("\n ") + "<br/>" + "<br/>" 
 
 
 
