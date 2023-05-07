@@ -6,14 +6,13 @@ from reportlab.platypus import SimpleDocTemplate
 from reportlab.platypus import Paragraph, Spacer, Table, Image
 from reportlab.lib.styles import getSampleStyleSheet
 
-styles = getSampleStyleSheet()
-report = SimpleDocTemplate("processed.pdf")
-
 
 def generate_report(paragraph, title, file_path):
-    report_title = title
-    report_body = paragraph
-    attachment = file_path
+    styles = getSampleStyleSheet()
+    report_title = Paragraph(title)
+    report_body = Paragraph(paragraph)
+    report = SimpleDocTemplate(file_path)
+    report.buil([report_title,	report_body])
 
 
 
