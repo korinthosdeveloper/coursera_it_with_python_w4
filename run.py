@@ -15,6 +15,8 @@ textDir = os.listdir(path)
 data = {}
 #process the files to create the data dir
 for file in textDir:
+	#take the file name to use for image file
+	name, ext = os.path.splitext(file)
 	with open(path+file, "r") as openedFile:
 		#read all file lines
 		lines = openedFile.readlines()
@@ -23,6 +25,7 @@ for file in textDir:
 		# get weight with regex & convert it to int
 		data["weight"] = int(re.search("[0-9]*", lines[1].strip("\n "))[0])
 		data["description"] = lines[2].strip("\n ")
+		data["image_name"] = name+".jpg"
 		print(data)
 
 
