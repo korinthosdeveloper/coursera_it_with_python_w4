@@ -2,8 +2,6 @@
 
 #reports py to make the pdf report
 
-import datetime
-import os
 from reportlab.platypus import SimpleDocTemplate
 from reportlab.platypus import Paragraph, Spacer, Table, Image
 from reportlab.lib.styles import getSampleStyleSheet
