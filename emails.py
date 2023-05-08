@@ -28,6 +28,16 @@ def generate_email(sender, recipient, subject, body, attachment):
                                filename=attachment_filename)
     return message    
 
+# email generate method for health_check.py
+
+def generate_error_report(sender, recipient, subject, body):
+    # here I changed message obj to error_message to avoid confusion
+    error_message = EmailMessage()
+    error_message["From"] = sender
+    error_message["To"] = recipient
+    error_message["Subject"] = subject
+    error_message.set_content(body)
+    return error_message
 
 
 def send_email(message):
