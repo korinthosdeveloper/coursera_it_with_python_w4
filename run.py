@@ -29,8 +29,7 @@ for file in textDir:
 		data["weight"] = int(re.search("[0-9]*", lines[1].strip("\n "))[0])
 		data["description"] = lines[2].strip("\n ")
 		data["image_name"] = name+".jpg"
-		print(data)
 		#we want to upload json object to django server
-		#r = requests.post(url, {json: data})
+		r = requests.post(url, {json: data})
 
 
