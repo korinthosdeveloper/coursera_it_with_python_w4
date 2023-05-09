@@ -30,6 +30,6 @@ for file in textDir:
 		data["description"] = lines[2].strip("\n ")
 		data["image_name"] = name+".jpg"
 		#we want to upload json object to django server
-		r = requests.post(url, {json: data})
+		r = requests.post(url, json= data)
 
 
