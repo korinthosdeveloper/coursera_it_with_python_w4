@@ -11,10 +11,10 @@ import emails
 time_stamp = datetime.datetime.now().strftime("%Y-%m-%d")
 #get user to find the directory and path
 user = os.getenv("USER")
-path = ("/home/{}/supplier_description/".format(user))
+path = ("/home/{}/supplier-data/description/".format(user))
 
 #change the path here
-attachment = "/home/{}/project1/processed.pdf".format(user)
+attachment = "/home/{}/tmp/processed.pdf".format(user)
 # dir of files
 textDir = os.listdir(path)
 paragraph = ""
