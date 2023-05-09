@@ -6,10 +6,7 @@ from PIL import Image
 
 #where images directory are
 user  = os.getenv("USER")
-
-images_path = "/home/{}/images/".format(user)
-#here give the new path
-new_path = "/home/{}/images/modified_jpg/".format(user)
+images_path = "/home/{}/supplier-data/images/".format(user)
 
 #put files in a list
 images_dir = os.listdir(images_path)
@@ -23,8 +20,9 @@ for im_file in images_dir:
 	if os.path.isfile(images_path+im_file):
 		#split ext
 		file, ext = os.path.splitext(im_file)
-		#open file as image obj
-		with Image.open(images_path+file+ext) as im:
-			#save the new file
-			im.convert("RGB").resize(size).save(new_path+file+".jpg", "JPEG")
+		#open file as image obj only if is a .tiff file
+		if ext == ".tiff":
+			with Image.open(images_path+file+ext) as im:
+				#save the new file
+				im.convert("RGB").resize(size).save(images_path+file+".jpeg", "JPEG")
 
