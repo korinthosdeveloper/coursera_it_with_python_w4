@@ -29,7 +29,7 @@ local_host = socket.gethostbyname("localhost")
 if cpu_usage > 80:
     subject = "Error - CPU usage is over 80%"
 # if disk is use more than 80% of disk space alert
-elif disk_threshold > 20:
+elif disk_threshold < 20:
     subject = "Error - Available disk space is less than 20%"      
 # if free memory less than 500 MB alert
 elif mem_available_MB < 500:
