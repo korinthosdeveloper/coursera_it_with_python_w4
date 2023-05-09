@@ -11,7 +11,7 @@ url = "http://[linux-insta-ip]/fruits"
 #get env variable of user 
 user = os.getenv("USER")
 #find path of files
-path = ("/home/{}/supplier_description/".format(user))
+path = ("/home/{}/supplier-data/description/".format(user))
 #find dir of files
 textDir = os.listdir(path)
 
