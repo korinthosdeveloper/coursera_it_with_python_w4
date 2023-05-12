@@ -8,10 +8,10 @@ import reports
 import emails
 
 # get time
-time_stamp = datetime.datetime.now().strftime("%Y-%m-%d")
+time_stamp = datetime.datetime.now().strftime("%B %d,%Y")
 #get user to find the directory and path
 user = os.getenv("USER")
-path = ("/home/{}/supplier-data/description/".format(user))
+path = ("/home/{}/supplier-data/descriptions/".format(user))
 
 #change the path here
 attachment = "/home/{}/tmp/processed.pdf".format(user)
