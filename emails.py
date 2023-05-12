@@ -31,7 +31,7 @@ def generate_email(sender, recipient, subject, body, attachment):
 # email generate method for health_check.py
 
 def generate_error_report(sender, recipient, subject, body):
-    # here I changed message obj to error_message to avoid confusion
+    # here I changed the returned -message object- to error_message to avoid confusion
     error_message = EmailMessage()
     error_message["From"] = sender
     error_message["To"] = recipient
