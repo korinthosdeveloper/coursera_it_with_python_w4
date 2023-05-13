@@ -18,7 +18,7 @@ size = 600, 400
 #check if is file first
 for im_file in images_dir:
 	if os.path.isfile(images_path+im_file):
-		#split ext
+		#split text function to get the file name and its extension
 		file, ext = os.path.splitext(im_file)
 		#open file as image obj only if is a .tiff file
 		if ext == ".tiff":
